@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/mapView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="kakao_map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/customerInfoList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/createMarkerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:contentDescription="markerCreateButton"
+            app:backgroundTint="#FFC107"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/bluetoothConnectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="100dp"
+            android:clickable="true"
+            android:contentDescription="bluetoothConnectButton"
+            android:visibility="invisible"
+            app:backgroundTint="#03A9F4"
+            app:srcCompat="@android:drawable/stat_sys_data_bluetooth" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/customerInfoList"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="100dp"
+        android:contentDescription="map_pin_list"
+        android:scrollbarStyle="insideOverlay"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mapView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/checkCustomerInfoButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:backgroundTint="#FFC107"
+        android:contentDescription="nextPageButton"
+        android:text="고객정보확인"
+        android:fontFamily="@font/dohyeon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mapView"
+        app:layout_constraintTop_toBottomOf="@+id/customerInfoList" />
+
+    <ScrollView
+        android:id="@+id/customerInfoScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="customerInfoView"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/customerInfoList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/customerInfoList"
+        app:layout_constraintTop_toTopOf="@+id/customerInfoList">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/insulationResist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dohyeon"
+                android:textSize="24dp"
+                android:text="절연저항: " />
+            <TextView
+                android:id="@+id/igo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dohyeon"
+                android:textSize="24dp"
+                android:text="IGO: " />
+            <TextView
+                android:id="@+id/igr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dohyeon"
+                android:textSize="24dp"
+                android:text="IGR: " />
+            <TextView
+                android:id="@+id/ac_v"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dohyeon"
+                android:textSize="24dp"
+                android:text="AC V: " />
+            <TextView
+                android:id="@+id/freq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dohyeon"
+                android:textSize="24dp"
+                android:text="주파수: " />
+            <TextView
+                android:id="@+id/leakCurrent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dohyeon"
+                android:textSize="24dp"
+                android:text="합성누설전류: " />
+            <TextView
+                android:id="@+id/loadCurrent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dohyeon"
+                android:textSize="24dp"
+                android:text="부하전류: " />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
